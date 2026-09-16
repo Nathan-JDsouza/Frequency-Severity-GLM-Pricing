@@ -58,7 +58,7 @@ The baseline was re-tested against overdispersion corrections and a Tweedie alte
 
 ## Run
 
-Place `freMTPL2freq.csv` in `data/raw/` (or `Downloads`). The first run fetches `freMTPL2sev.csv` from a Hugging Face mirror if it is missing. CSVs are not in this repo (Dutang & Charpentier, CASdatasets).
+The first run downloads `freMTPL2freq.csv` (~38 MB) and `freMTPL2sev.csv` from a Hugging Face mirror into `data/raw/` if they are missing (or copies them from `Downloads` if you already have them). Later runs reuse the local files. CSVs are not in this repo (Dutang & Charpentier, CASdatasets). Needs a network connection once.
 
 ```bash
 python -m venv .venv

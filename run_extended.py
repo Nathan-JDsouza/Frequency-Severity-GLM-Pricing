@@ -33,7 +33,7 @@ import patsy
 from scipy.special import ndtr
 from sklearn.model_selection import RepeatedKFold, RepeatedStratifiedKFold, train_test_split
 
-from src.data import load_frequency, load_severity
+from src.data import ensure_raw_files, load_frequency, load_severity
 from src.features import add_rating_factors, glm_formula
 from src.premium import actual_loss_by_policy
 from src.diagnostics import (
@@ -70,8 +70,9 @@ def p_two_sided(z):
 
 
 def load_data():
-    freq = add_rating_factors(load_frequency(ROOT / "data/raw/freMTPL2freq.csv"))
-    sev = load_severity(ROOT / "data/raw/freMTPL2sev.csv")
+    paths = ensure_raw_files(ROOT)
+    freq = add_rating_factors(load_frequency(paths["freq"]))
+    sev = load_severity(paths["sev"])
     freq["actual_loss"] = actual_loss_by_policy(freq, sev).to_numpy()
     freq["PurePremium"] = freq["actual_loss"]
     return freq, sev
