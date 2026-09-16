@@ -1,0 +1,527 @@
+{
+  "results": {
+    "poisson+gamma": {
+      "gini": -0.2505627509128961,
+      "loss_ratio": 0.9031555407326747,
+      "mse": 4408536.062511744
+    },
+    "negbin+gamma": {
+      "gini": -0.24942470700864253,
+      "loss_ratio": 0.890604715077194,
+      "mse": 4409150.084309522
+    },
+    "tweedie1.8": {
+      "gini": -0.27722904745931753,
+      "loss_ratio": 0.5401836427886257,
+      "mse": 4504320.5963238375
+    },
+    "poisson+gamma_cal": {
+      "gini": -0.2505627509128961,
+      "loss_ratio": 0.9033834023198104,
+      "mse": 4408533.362719662
+    },
+    "negbin+gamma_cal": {
+      "gini": -0.24942470700864253,
+      "loss_ratio": 0.903203204981103,
+      "mse": 4408982.955566424
+    },
+    "tweedie1.8_cal": {
+      "gini": -0.27722904745931753,
+      "loss_ratio": 0.9118695712401255,
+      "mse": 4435658.732432845
+    },
+    "exposure_only": {
+      "gini": -0.17074059390631596,
+      "loss_ratio": 154.44445741971015,
+      "mse": 4414694.0985223595
+    }
+  },
+  "gini_bootstrap": {
+    "nb_minus_pois": {
+      "mean": 0.0010977993324443776,
+      "sd": 0.00032529381283814785,
+      "ci_lo": 0.00046104590819692,
+      "ci_hi": 0.0016907268255739747,
+      "p_two_sided": 0.0007387119137214349
+    },
+    "tweedie_minus_pois": {
+      "mean": -0.030605304907548786,
+      "sd": 0.022987518859267333,
+      "ci_lo": -0.07673665857736803,
+      "ci_hi": 0.012128843479040939,
+      "p_two_sided": 0.18306140233871027
+    },
+    "tweedie_minus_nb": {
+      "mean": -0.03170310423999316,
+      "sd": 0.022899077778348112,
+      "ci_lo": -0.07764375134743497,
+      "ci_hi": 0.011175399048421181,
+      "p_two_sided": 0.16621434699796533
+    }
+  },
+  "tails": [
+    {
+      "model": "poisson+gamma",
+      "slice": "top 10.0%",
+      "n_policies": 13560,
+      "exposure_share": 0.14739744314003517,
+      "actual_loss_share": 0.22718149367324866,
+      "actual_over_pred": 0.6387094382722835,
+      "lift": 1.5412851731587676
+    },
+    {
+      "model": "poisson+gamma",
+      "slice": "top 1.0%",
+      "n_policies": 1356,
+      "exposure_share": 0.01457596378930938,
+      "actual_loss_share": 0.05096874603493224,
+      "actual_over_pred": 0.6475532382161944,
+      "lift": 3.4967667848018977
+    },
+    {
+      "model": "poisson+gamma",
+      "slice": "top 0.1%",
+      "n_policies": 135,
+      "exposure_share": 0.0014873517966721963,
+      "actual_loss_share": 0.005541858200343442,
+      "actual_over_pred": 0.3737680096342905,
+      "lift": 3.7259901878915307
+    },
+    {
+      "model": "negbin+gamma",
+      "slice": "top 10.0%",
+      "n_policies": 13560,
+      "exposure_share": 0.14613151076646108,
+      "actual_loss_share": 0.226055688839203,
+      "actual_over_pred": 0.6170779183124713,
+      "lift": 1.5469332223662022
+    },
+    {
+      "model": "negbin+gamma",
+      "slice": "top 1.0%",
+      "n_policies": 1356,
+      "exposure_share": 0.014487535716867051,
+      "actual_loss_share": 0.05068692013250765,
+      "actual_over_pred": 0.6154705847552224,
+      "lift": 3.498657130038729
+    },
+    {
+      "model": "negbin+gamma",
+      "slice": "top 0.1%",
+      "n_policies": 135,
+      "exposure_share": 0.001460250618072177,
+      "actual_loss_share": 0.0055236910856877285,
+      "actual_over_pred": 0.3525034810725881,
+      "lift": 3.7827007346041097
+    },
+    {
+      "model": "tweedie",
+      "slice": "top 10.0%",
+      "n_policies": 13560,
+      "exposure_share": 0.1527752110337792,
+      "actual_loss_share": 0.2425688127542374,
+      "actual_over_pred": 0.29916467165189436,
+      "lift": 1.58774981302827
+    },
+    {
+      "model": "tweedie",
+      "slice": "top 1.0%",
+      "n_policies": 1356,
+      "exposure_share": 0.012780859949050365,
+      "actual_loss_share": 0.03750756532337025,
+      "actual_over_pred": 0.12193369668209394,
+      "lift": 2.9346667965137283
+    },
+    {
+      "model": "tweedie",
+      "slice": "top 0.1%",
+      "n_policies": 135,
+      "exposure_share": 0.0015493771744990448,
+      "actual_loss_share": 0.002471761449888684,
+      "actual_over_pred": 0.028639615626012093,
+      "lift": 1.5953258448433454
+    },
+    {
+      "model": "poisson+gamma",
+      "slice": "bottom 10%",
+      "n_policies": 13560,
+      "exposure_share": 0.009167180224167204,
+      "actual_loss_share": 0.06043568149143955,
+      "actual_over_pred": 8.702140191506356,
+      "lift": 6.592614087821084
+    },
+    {
+      "model": "tweedie",
+      "slice": "bottom 10%",
+      "n_policies": 13560,
+      "exposure_share": 0.009312868015327104,
+      "actual_loss_share": 0.05649337148106007,
+      "actual_over_pred": 7.695267482477396,
+      "lift": 6.066162581503718
+    }
+  ],
+  "tw_vs_fs_deciles": [
+    {
+      "decile_fs": 1,
+      "prem_fs": 3932554.5798065183,
+      "prem_tw": 7002271.257014548,
+      "actual_loss": 2511648.32,
+      "ratio_tw_over_fs": 1.7805909911513702,
+      "actual_over_fs": 0.6386811089405332
+    },
+    {
+      "decile_fs": 2,
+      "prem_fs": 2018880.3988011098,
+      "prem_tw": 3453195.6931946995,
+      "actual_loss": 1381489.85,
+      "ratio_tw_over_fs": 1.7104508495130977,
+      "actual_over_fs": 0.6842851368611944
+    },
+    {
+      "decile_fs": 3,
+      "prem_fs": 1624516.2488113379,
+      "prem_tw": 2589697.1847733264,
+      "actual_loss": 1110229.45,
+      "ratio_tw_over_fs": 1.594134368719435,
+      "actual_over_fs": 0.6834215729220051
+    },
+    {
+      "decile_fs": 4,
+      "prem_fs": 1362870.8270233234,
+      "prem_tw": 2179745.1764096394,
+      "actual_loss": 1145661.5,
+      "ratio_tw_over_fs": 1.5993776762912078,
+      "actual_over_fs": 0.8406236873543363
+    },
+    {
+      "decile_fs": 5,
+      "prem_fs": 1128618.8582659422,
+      "prem_tw": 1797291.3246904716,
+      "actual_loss": 1067898.13,
+      "ratio_tw_over_fs": 1.5924696911868956,
+      "actual_over_fs": 0.9461990841095494
+    },
+    {
+      "decile_fs": 6,
+      "prem_fs": 880647.7058840082,
+      "prem_tw": 1402852.6183129793,
+      "actual_loss": 1191642.61,
+      "ratio_tw_over_fs": 1.5929782238003716,
+      "actual_over_fs": 1.3531433762196772
+    },
+    {
+      "decile_fs": 7,
+      "prem_fs": 622399.3540927721,
+      "prem_tw": 981092.6699234728,
+      "actual_loss": 1010872.88,
+      "ratio_tw_over_fs": 1.576307339446942,
+      "actual_over_fs": 1.6241547703298609
+    },
+    {
+      "decile_fs": 8,
+      "prem_fs": 388185.62089909805,
+      "prem_tw": 594951.2455794876,
+      "actual_loss": 638022.22,
+      "ratio_tw_over_fs": 1.532646274226975,
+      "actual_over_fs": 1.643600859099937
+    },
+    {
+      "decile_fs": 9,
+      "prem_fs": 205716.69874450896,
+      "prem_tw": 342613.51395445515,
+      "actual_loss": 330067.51,
+      "ratio_tw_over_fs": 1.6654628236085296,
+      "actual_over_fs": 1.6044760197611827
+    },
+    {
+      "decile_fs": 10,
+      "prem_fs": 76790.95650831687,
+      "prem_tw": 122830.31121755527,
+      "actual_loss": 668158.2000000001,
+      "ratio_tw_over_fs": 1.5995413627157007,
+      "actual_over_fs": 8.701001138430083
+    }
+  ],
+  "calibration": {
+    "poisson+gamma": [
+      {
+        "decile": 1,
+        "exposure": 10551.99,
+        "actual_loss": 2511648.32,
+        "model_premium": 3932554.5798065183,
+        "actual_over_pred": 0.6386811089405332,
+        "actual_rate": 238.02603300420108,
+        "pred_rate": 372.68369092526797
+      },
+      {
+        "decile": 2,
+        "exposure": 11417.96,
+        "actual_loss": 1381489.85,
+        "model_premium": 2018880.3988011098,
+        "actual_over_pred": 0.6842851368611944,
+        "actual_rate": 120.99270360029288,
+        "pred_rate": 176.81620874491676
+      },
+      {
+        "decile": 3,
+        "exposure": 11632.27,
+        "actual_loss": 1110229.45,
+        "model_premium": 1624516.2488113379,
+        "actual_over_pred": 0.6834215729220051,
+        "actual_rate": 95.44392023225045,
+        "pred_rate": 139.65599567507786
+      },
+      {
+        "decile": 4,
+        "exposure": 11031.87,
+        "actual_loss": 1145661.5,
+        "model_premium": 1362870.8270233234,
+        "actual_over_pred": 0.8406236873543363,
+        "actual_rate": 103.85016320895731,
+        "pred_rate": 123.53942051740306
+      },
+      {
+        "decile": 5,
+        "exposure": 9767.66,
+        "actual_loss": 1067898.13,
+        "model_premium": 1128618.8582659422,
+        "actual_over_pred": 0.9461990841095494,
+        "actual_rate": 109.32998589221982,
+        "pred_rate": 115.54649304602557
+      },
+      {
+        "decile": 6,
+        "exposure": 7381.92,
+        "actual_loss": 1191642.61,
+        "model_premium": 880647.7058840082,
+        "actual_over_pred": 1.3531433762196772,
+        "actual_rate": 161.42719102889222,
+        "pred_rate": 119.29792057947095
+      },
+      {
+        "decile": 7,
+        "exposure": 4803.38,
+        "actual_loss": 1010872.88,
+        "model_premium": 622399.3540927721,
+        "actual_over_pred": 1.6241547703298609,
+        "actual_rate": 210.45032456312012,
+        "pred_rate": 129.57528950296918
+      },
+      {
+        "decile": 8,
+        "exposure": 2868.18,
+        "actual_loss": 638022.22,
+        "model_premium": 388185.62089909805,
+        "actual_over_pred": 1.643600859099937,
+        "actual_rate": 222.44845860441117,
+        "pred_rate": 135.34214062544822
+      },
+      {
+        "decile": 9,
+        "exposure": 1472.072854255,
+        "actual_loss": 330067.51,
+        "model_premium": 205716.69874450896,
+        "actual_over_pred": 1.6044760197611827,
+        "actual_rate": 224.21954799719717,
+        "pred_rate": 139.74627556638148
+      },
+      {
+        "decile": 10,
+        "exposure": 656.2997865030001,
+        "actual_loss": 668158.2000000001,
+        "model_premium": 76790.95650831687,
+        "actual_over_pred": 8.701001138430083,
+        "actual_rate": 1018.068592647555,
+        "pred_rate": 117.00591419888546
+      }
+    ],
+    "negbin+gamma": [
+      {
+        "decile": 1,
+        "exposure": 10461.62,
+        "actual_loss": 2499201.77,
+        "model_premium": 4050235.1486309133,
+        "actual_over_pred": 0.6170510299494083,
+        "actual_rate": 238.89242488257077,
+        "pred_rate": 387.1518128770604
+      },
+      {
+        "decile": 2,
+        "exposure": 11392.07,
+        "actual_loss": 1397377.26,
+        "model_premium": 2036192.2068370502,
+        "actual_over_pred": 0.6862698203577927,
+        "actual_rate": 122.66227823389428,
+        "pred_rate": 178.73768391846698
+      },
+      {
+        "decile": 3,
+        "exposure": 11632.05,
+        "actual_loss": 1092276.84,
+        "model_premium": 1633552.119388402,
+        "actual_over_pred": 0.6686513561678986,
+        "actual_rate": 93.90235083239843,
+        "pred_rate": 140.43544511830692
+      },
+      {
+        "decile": 4,
+        "exposure": 10999.56,
+        "actual_loss": 1163185.49,
+        "model_premium": 1369735.1097817605,
+        "actual_over_pred": 0.8492046978231652,
+        "actual_rate": 105.74836538916102,
+        "pred_rate": 124.52635467071052
+      },
+      {
+        "decile": 5,
+        "exposure": 9799.5,
+        "actual_loss": 1057101.08,
+        "model_premium": 1134124.3833518145,
+        "actual_over_pred": 0.9320856649566266,
+        "actual_rate": 107.87296086535028,
+        "pred_rate": 115.73288263195208
+      },
+      {
+        "decile": 6,
+        "exposure": 7426.62,
+        "actual_loss": 1192681.89,
+        "model_premium": 885976.8898868846,
+        "actual_over_pred": 1.3461772012498805,
+        "actual_rate": 160.5955185535277,
+        "pred_rate": 119.29745831709238
+      },
+      {
+        "decile": 7,
+        "exposure": 4831.04,
+        "actual_loss": 1016948.63,
+        "model_premium": 627502.6036591501,
+        "actual_over_pred": 1.6206285425269584,
+        "actual_rate": 210.5030448930251,
+        "pred_rate": 129.88975534442895
+      },
+      {
+        "decile": 8,
+        "exposure": 2894.08,
+        "actual_loss": 630116.92,
+        "model_premium": 391838.2431442867,
+        "actual_over_pred": 1.6081046988769085,
+        "actual_rate": 217.7261582264485,
+        "pred_rate": 135.39302408512782
+      },
+      {
+        "decile": 9,
+        "exposure": 1487.716552885,
+        "actual_loss": 338642.59,
+        "model_premium": 207357.61022923456,
+        "actual_over_pred": 1.6331331636472346,
+        "actual_rate": 227.62574587430632,
+        "pred_rate": 139.3797829479842
+      },
+      {
+        "decile": 10,
+        "exposure": 659.346087873,
+        "actual_loss": 668158.2000000001,
+        "model_premium": 77175.48802596194,
+        "actual_over_pred": 8.65764787616543,
+        "actual_rate": 1013.364926688846,
+        "pred_rate": 117.04852648011328
+      }
+    ],
+    "tweedie": [
+      {
+        "decile": 1,
+        "exposure": 10937.11,
+        "actual_loss": 2681765.76,
+        "model_premium": 8964471.280819817,
+        "actual_over_pred": 0.2991549279362238,
+        "actual_rate": 245.19875542990786,
+        "pred_rate": 819.6380287680947
+      },
+      {
+        "decile": 2,
+        "exposure": 11293.9,
+        "actual_loss": 1235263.31,
+        "model_premium": 3227432.6246264502,
+        "actual_over_pred": 0.382738682311911,
+        "actual_rate": 109.37437997503078,
+        "pred_rate": 285.76777062188
+      },
+      {
+        "decile": 3,
+        "exposure": 11182.62,
+        "actual_loss": 1156002.04,
+        "model_premium": 2376194.8953302284,
+        "actual_over_pred": 0.48649293972973806,
+        "actual_rate": 103.3748835246123,
+        "pred_rate": 212.4899974541054
+      },
+      {
+        "decile": 4,
+        "exposure": 10662.97,
+        "actual_loss": 1416501.91,
+        "model_premium": 1852825.1569780868,
+        "actual_over_pred": 0.7645092170004214,
+        "actual_rate": 132.8430924967434,
+        "pred_rate": 173.76257806015462
+      },
+      {
+        "decile": 5,
+        "exposure": 9491.06,
+        "actual_loss": 1182936.19,
+        "model_premium": 1449419.6101330444,
+        "actual_over_pred": 0.8161447394046342,
+        "actual_rate": 124.6368888195839,
+        "pred_rate": 152.7141973744813
+      },
+      {
+        "decile": 6,
+        "exposure": 7423.72,
+        "actual_loss": 1107157.72,
+        "model_premium": 1077250.8665575702,
+        "actual_over_pred": 1.0277621994754103,
+        "actual_rate": 149.13786080293977,
+        "pred_rate": 145.1093072688046
+      },
+      {
+        "decile": 7,
+        "exposure": 5152.31188038,
+        "actual_loss": 949869.65,
+        "model_premium": 739603.6527007809,
+        "actual_over_pred": 1.2842955095359512,
+        "actual_rate": 184.35794883013642,
+        "pred_rate": 143.54791982162243
+      },
+      {
+        "decile": 8,
+        "exposure": 3134.710958904,
+        "actual_loss": 432593.64,
+        "model_premium": 456737.9829470283,
+        "actual_over_pred": 0.947137431419124,
+        "actual_rate": 138.00112535774247,
+        "pred_rate": 145.70338029083203
+      },
+      {
+        "decile": 9,
+        "exposure": 1638.471158019,
+        "actual_loss": 269027.21,
+        "model_premium": 241430.06611044327,
+        "actual_over_pred": 1.1143069889105375,
+        "actual_rate": 164.1940467998646,
+        "pred_rate": 147.35081843146097
+      },
+      {
+        "decile": 10,
+        "exposure": 666.728643455,
+        "actual_loss": 624573.24,
+        "model_premium": 81174.85886718644,
+        "actual_over_pred": 7.694170938096612,
+        "actual_rate": 936.7727727482204,
+        "pred_rate": 121.75096969966198
+      }
+    ]
+  },
+  "best_power": 1.8,
+  "severity_cap": 33503.04480000021,
+  "nb2_alpha": 0.7913524730894272,
+  "phi_quasi": 2.3123068693388555
+}

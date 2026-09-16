@@ -61,4 +61,55 @@ Then: did the expensive-looking people actually cost more on data we hid?
 Answer: yes, enough to beat “same price per year for everyone.”
 ```
 
+## The stress test (September 2026)
+
+We tried to break the model three ways. Plain-language results; numbers in [ANALYSIS.md](ANALYSIS.md#part-ii--model-validation-overdispersion-quasinb-corrections-and-tweedie).
+
+### 1. “You’re counting claims wrong”
+
+**Poisson** is the standard way to model *how many* claims happen. One assumption it makes: the spread around the average is exactly the average. We measured the actual spread (a “Pearson chi-square” test).
+
+**Verdict: the assumption fails, and it matters — but only for confidence, not for prices.** The real spread is about **2.3×** what Poisson promises. And in a fun twist, the other common test (the “deviance ratio”) says the data looks *too quiet* — that test is simply broken on data this full of zeros, and we proved it with a simulation.
+
+Where does the extra noise come from? Mostly from **1.35% of policies with phantom claims**: the count file says they had a claim, the money file says they didn’t. Those policies hold 27% of the claim *counts* but 0.2% of the claim *euros*. They aren't real risk — they're a paperwork mismatch between the two files.
+
+We rebuilt the frequency model two ways that allow extra spread: **quasi-Poisson** (same prices, honest error bars) and **negative binomial** (slightly different prices). Result:
+
+- Prices moved by less than 5% on any factor, and mostly much less.
+- The “who is expensive” list barely changed: the top 10% of policies is **98.8% the same people**.
+- But the model’s **stated confidence was fiction**: with the corrected error bars, a few factors (like neighbourhood density) that looked meaningful turn out to be noise.
+
+### 2. “Price the whole thing in one model instead”
+
+Instead of (how often?) × (how big?), a **Tweedie** model prices the total cost directly in one step. It has a dial, *p*, from 1 to 2, that controls how it balances “how likely any claim is” against “how big claims get.” We tried every setting 1.1 to 1.9 with cross-validation.
+
+**Verdict: it ranks risks better, but prices the dollar level badly.**
+
+- It ordered the hidden data better than the original model — better on 14 out of 15 test slices.
+- But at the winning dial setting it predicted **€1.85 for every €1** of actual loss. A single correction factor (divide by 1.69) fixes the total, and after that it's slightly better calibrated overall.
+- The two models disagree about **who** is expensive: only half of the top-10%-most-expensive policies are the same under both models. The Tweedie pushes younger, worse bonus-malus, longer-cover drivers higher.
+- In the extreme tip — the most expensive 0.1% of policies — the original two-part model is clearly better: it finds **5.5%** of the hidden euros there vs the Tweedie's 2.5%.
+
+### 3. “Are you just memorizing?”
+
+We checked every model on data it never saw, repeatedly (15 different train/test slices).
+
+**Verdict: no.** Every model scores a bit worse on unseen data (about 10–15% weaker), which is normal and small. Nothing here is memorizing.
+
+### The bottom line
+
+- **Keep the two-part model as the main price list.** The corrections didn't change it, and it's better in the extreme tail, which is where the money is.
+- **Never trust the original model's confidence intervals** — use the corrected ones.
+- **Fix the data before the model**: those phantom claims are the single biggest statistical problem, and no clever model fixes a broken join.
+- **Keep the Tweedie as a challenger** to sanity-check the middle of the book.
+
+```
+   Frequency × Severity      Tweedie (one-step)
+        │                        │
+   best at the extremes     best through the middle
+   honest euro totals       needs a level correction
+   same prices after        different top-10% people
+   correcting the noise     (only ~half overlap)
+```
+
 If you want the formulas, Gini numbers, and charts, read [ANALYSIS.md](ANALYSIS.md).

@@ -1,0 +1,67 @@
+{
+  "stats": {
+    "deviance": 169926.24676756407,
+    "pearson_chi2": 1254084.255199667,
+    "df_resid": 542352,
+    "deviance_ratio": 0.3133135800505282,
+    "pearson_ratio": 2.3123068693388555
+  },
+  "pearson_by_mu_band": [
+    {
+      "mu_band": "[0,0.02)",
+      "n": 150567,
+      "pearson_chi2": 829398.238476952,
+      "mean_sq_pearson": 5.508499461880438,
+      "mean_mu": 0.00915884128082734
+    },
+    {
+      "mu_band": "[0.02,0.05)",
+      "n": 139969,
+      "pearson_chi2": 199791.16610332706,
+      "mean_sq_pearson": 1.427395824099101,
+      "mean_mu": 0.034633502838244845
+    },
+    {
+      "mu_band": "[0.05,0.1)",
+      "n": 196676,
+      "pearson_chi2": 176995.54144181797,
+      "mean_sq_pearson": 0.8999346206035204,
+      "mean_mu": 0.07076112077704452
+    },
+    {
+      "mu_band": "[0.1,0.2)",
+      "n": 46176,
+      "pearson_chi2": 41627.2163970082,
+      "mean_sq_pearson": 0.9014903065880153,
+      "mean_mu": 0.13264420981990085
+    },
+    {
+      "mu_band": "[0.2,1)",
+      "n": 9011,
+      "pearson_chi2": 6261.59065916018,
+      "mean_sq_pearson": 0.6948829940251005,
+      "mean_mu": 0.28294350903517435
+    }
+  ],
+  "bootstrap": {
+    "B": 50,
+    "deviance_ratio_mean": 0.28123538030363376,
+    "deviance_ratio_sd": 0.0012170769806912108,
+    "pearson_ratio_mean": 1.0020290775987897,
+    "pearson_ratio_sd": 0.013306032710657686
+  },
+  "z_scores": {
+    "deviance_ratio": 26.35675495947375,
+    "pearson_ratio": 98.47246134383671
+  },
+  "phi_quasi": 2.3123068693388555,
+  "nb2_alpha": 0.7913524730894272,
+  "nb2_loglike": -112458.82347391977,
+  "poisson_loglike": -112686.11666387551,
+  "n_terms": 58,
+  "n_sig_poisson_5pct": 26,
+  "n_sig_quasi_5pct": 23,
+  "n_sig_nb2_5pct": 24,
+  "max_rel_ratio_nb_vs_pois": 1.0141667140439647,
+  "min_rel_ratio_nb_vs_pois": 0.9498235226864573
+}
